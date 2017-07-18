@@ -1,0 +1,12 @@
+version: '2'
+services:
+    workspace:
+        build:
+            context: ./workspace
+        volumes_from:
+            - volumes_source
+        tty: true
+    volumes_source:
+        build: ./volumes
+        volumes:
+            - ./app:/var/www/app
